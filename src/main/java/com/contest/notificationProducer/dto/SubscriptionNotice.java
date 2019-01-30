@@ -4,6 +4,24 @@ import java.util.List;
 
 public class SubscriptionNotice implements NotificationTypeBody{
     List<String> followerIds;
+    private String contestId;
+    private String contestName;
+
+    public String getContestId() {
+        return contestId;
+    }
+
+    public void setContestId(String contestId) {
+        this.contestId = contestId;
+    }
+
+    public String getContestName() {
+        return contestName;
+    }
+
+    public void setContestName(String contestName) {
+        this.contestName = contestName;
+    }
 
     public List<String> getFollowerIds() {
         return followerIds;

@@ -4,11 +4,13 @@ package com.contest.notificationProducer.dto;
 import com.contest.notificationProducer.notificationEnum.NotificationMedium;
 import com.contest.notificationProducer.notificationEnum.NotificationType;
 
+import java.util.List;
+
 public class Header {
     private NotificationType notificationType;
     private String receiver;
     private String timeStamp;
-    private NotificationMedium notificationMedium;
+    private List<NotificationMedium> notificationMedium;
     private NotificationTypeBody notificationTypeBody;
 
     public NotificationType getNotificationType() {
@@ -19,11 +21,11 @@ public class Header {
         this.notificationType = notificationType;
     }
 
-    public NotificationMedium getNotificationMedium() {
+    public List<NotificationMedium> getNotificationMedium() {
         return notificationMedium;
     }
 
-    public void setNotificationMedium(NotificationMedium notificationMedium) {
+    public void setNotificationMedium(List<NotificationMedium> notificationMedium) {
         this.notificationMedium = notificationMedium;
     }
 
