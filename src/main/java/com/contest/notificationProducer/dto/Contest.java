@@ -1,6 +1,6 @@
 package com.contest.notificationProducer.dto;
 
-public class Contest implements NotificationTypeBody {
+public class Contest extends NotificationBodyAbstractClass {
     private String contestId;
     private String contestName;
 

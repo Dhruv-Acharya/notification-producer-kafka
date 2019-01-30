@@ -1,6 +1,6 @@
 package com.contest.notificationProducer.dto;
 
-public class Share implements NotificationTypeBody {
+public class Share  extends NotificationBodyAbstractClass {
     private String ownerId;
     private String postId;
     private String sharerId;

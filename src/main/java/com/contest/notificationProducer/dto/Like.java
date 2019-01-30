@@ -3,7 +3,7 @@ package com.contest.notificationProducer.dto;
 
 import com.contest.notificationProducer.notificationEnum.PostComment;
 
-public class Like implements NotificationTypeBody {
+public class Like  extends NotificationBodyAbstractClass {
     private String postId;
     private String sender;
     private PostComment postComment;

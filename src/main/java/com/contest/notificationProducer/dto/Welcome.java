@@ -1,4 +1,4 @@
 package com.contest.notificationProducer.dto;
 
-public class Welcome implements NotificationTypeBody {
+public class Welcome  extends NotificationBodyAbstractClass {
 }

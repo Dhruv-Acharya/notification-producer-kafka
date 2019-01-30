@@ -2,7 +2,7 @@ package com.contest.notificationProducer.dto;
 
 import java.util.List;
 
-public class SubscriptionNotice implements NotificationTypeBody{
+public class SubscriptionNotice  extends NotificationBodyAbstractClass{
     List<String> followerIds;
     private String contestId;
     private String contestName;
