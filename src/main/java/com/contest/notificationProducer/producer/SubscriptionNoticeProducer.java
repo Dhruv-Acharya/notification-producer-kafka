@@ -1,6 +1,9 @@
 package com.contest.notificationProducer.producer;
 
 import com.contest.notificationProducer.dto.Header;
+import com.contest.notificationProducer.dto.Share;
+import com.contest.notificationProducer.dto.SubscriptionNotice;
+import com.contest.notificationProducer.exception.FieldsCanNotBeEmpty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -15,7 +18,22 @@ public class SubscriptionNoticeProducer implements Producer {
     private String kafkaTopic;
 
     @Override
-    public void send(Header header) {
+    public void send(Header header) throws FieldsCanNotBeEmpty {
+
+        if(header == null)
+            throw new FieldsCanNotBeEmpty("Header Cannot Be Empty");
+
+        if(header.getReceiver() == null || header.getNotificationMedium() == null || header.getNotificationType() == null ||
+                header.getNotificationTypeBody() == null || header.getTimeStamp() == null)
+            throw new FieldsCanNotBeEmpty("Header Fields Cannot Be Empty");
+
+        SubscriptionNotice subscriptionNotice = (SubscriptionNotice) header.getNotificationTypeBody();
+
+        if(subscriptionNotice.getContestId() == null || subscriptionNotice.getContestName() == null ||
+                subscriptionNotice.getFollowerIds().size() == 0) {
+            throw new FieldsCanNotBeEmpty("Notification Body Fields Cannot Be Empty");
+        }
+
         kafkaTemplate.send(kafkaTopic,header);
     }
 }

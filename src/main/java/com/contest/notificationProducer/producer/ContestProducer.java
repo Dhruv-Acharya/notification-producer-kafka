@@ -29,7 +29,9 @@ public class ContestProducer implements Producer {
 
         Contest contest = (Contest) header.getNotificationTypeBody();
 
-        if(contest)
+        if(contest.getContestId() == null || contest.getContestName() == null){
+            throw new FieldsCanNotBeEmpty("Notification Body Fields can not be empty");
+        }
 
         kafkaTemplate.send(kafkaTopic,header);
     }
