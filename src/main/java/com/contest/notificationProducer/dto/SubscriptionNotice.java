@@ -1,10 +1,16 @@
 package com.contest.notificationProducer.dto;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class SubscriptionNotice  extends NotificationBodyAbstractClass{
+    @NotEmpty
     List<String> followerIds;
+    @NotNull
     private String contestId;
+    @NotNull
     private String contestName;
 
     public String getContestId() {

@@ -3,14 +3,21 @@ package com.contest.notificationProducer.dto;
 
 import com.contest.notificationProducer.notificationEnum.NotificationMedium;
 import com.contest.notificationProducer.notificationEnum.NotificationType;
+import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class Header {
+    @NotNull
     private NotificationType notificationType;
+    @NotNull
     private String receiver;
+    @NotNull
     private String timeStamp;
+    @NotEmpty
     private List<NotificationMedium> notificationMedium;
+    @NotNull
     private NotificationBodyAbstractClass notificationTypeBody;
 
     public NotificationType getNotificationType() {

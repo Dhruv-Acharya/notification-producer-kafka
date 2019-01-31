@@ -1,7 +1,11 @@
 package com.contest.notificationProducer.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class Contest extends NotificationBodyAbstractClass {
+    @NotNull
     private String contestId;
+    @NotNull
     private String contestName;
 
     public String getContestId() {
