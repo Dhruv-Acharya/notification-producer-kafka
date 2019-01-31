@@ -3,13 +3,22 @@ package com.contest.notificationProducer.dto;
 
 import com.contest.notificationProducer.notificationEnum.NotificationMedium;
 import com.contest.notificationProducer.notificationEnum.NotificationType;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.NotNull;
+import java.util.List;
 
 public class Header {
+    @NotNull
     private NotificationType notificationType;
+    @NotNull
     private String receiver;
+    @NotNull
     private String timeStamp;
-    private NotificationMedium notificationMedium;
-    private NotificationTypeBody notificationTypeBody;
+    @NotEmpty
+    private List<NotificationMedium> notificationMedium;
+    @NotNull
+    private NotificationBodyAbstractClass notificationTypeBody;
 
     public NotificationType getNotificationType() {
         return notificationType;
@@ -19,11 +28,11 @@ public class Header {
         this.notificationType = notificationType;
     }
 
-    public NotificationMedium getNotificationMedium() {
+    public List<NotificationMedium> getNotificationMedium() {
         return notificationMedium;
     }
 
-    public void setNotificationMedium(NotificationMedium notificationMedium) {
+    public void setNotificationMedium(List<NotificationMedium> notificationMedium) {
         this.notificationMedium = notificationMedium;
     }
 
@@ -43,11 +52,11 @@ public class Header {
         this.timeStamp = timeStamp;
     }
 
-    public NotificationTypeBody getNotificationTypeBody() {
+    public NotificationBodyAbstractClass getNotificationTypeBody() {
         return notificationTypeBody;
     }
 
-    public void setNotificationTypeBody(NotificationTypeBody notificationTypeBody) {
+    public void setNotificationTypeBody(NotificationBodyAbstractClass notificationTypeBody) {
         this.notificationTypeBody = notificationTypeBody;
     }
 

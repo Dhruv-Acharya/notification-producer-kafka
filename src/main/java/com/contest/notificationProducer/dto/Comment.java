@@ -3,9 +3,14 @@ package com.contest.notificationProducer.dto;
 
 import com.contest.notificationProducer.notificationEnum.PostComment;
 
-public class Comment implements NotificationTypeBody {
+import javax.validation.constraints.NotNull;
+
+public class Comment extends NotificationBodyAbstractClass {
+    @NotNull(message = "Post ID can not be null")
     private String postId;
+    @NotNull
     private String commenter;
+    @NotNull
     private PostComment postComment;
 
     public PostComment getPostComment() {

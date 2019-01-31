@@ -1,6 +1,9 @@
 package com.contest.notificationProducer.dto;
 
-public class Generic implements NotificationTypeBody {
+import javax.validation.constraints.NotNull;
+
+public class Generic  extends NotificationBodyAbstractClass{
+    @NotNull
     private String message;
 
     public String getMessage() {

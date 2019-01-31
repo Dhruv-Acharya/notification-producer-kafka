@@ -1,5 +1,5 @@
 package com.contest.notificationProducer.dto;
 
-public class QuestionsAdded implements NotificationTypeBody {
+public class QuestionsAdded  extends NotificationBodyAbstractClass {
 
 }

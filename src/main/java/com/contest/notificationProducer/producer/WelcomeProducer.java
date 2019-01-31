@@ -7,11 +7,11 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GenericProducer implements Producer {
+public class WelcomeProducer implements Producer {
     @Autowired
     private KafkaTemplate<String, Header> kafkaTemplate;
 
-    @Value("${generic.kafka.topic}")
+    @Value("${welcome.kafka.topic}")
     private String kafkaTopic;
 
     @Override
